@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather App</title>
+    <link rel="stylesheet" href="style.css">
+    <script defer src="script.js"></script> <!-- defer is used to defer javscript to last after loading html dom( deferd script is run after all html dom is reday or parsed-->
+  </head>
+<body>
+  <div class="weather-container">
+        <div class="header">
+            <p>Weather App</p>
+            
+            <div class="search-box">
+                <form class="formplace">
+                <input type="text" class="place" placeholder="Enter place here..">
+                </form>
+                
+            </div>
+            <div class="output-place"></div>
+        </div>
+    </div>
+    <div class="error-message-container">
+    <div class="error-message"></div>
+    </div>
+    <div class="card-display"><!--for making invisble while starting-->
+<div class="card"> <!--card is grid container it is donw with
+    grid-template-areas:
+   'card-image card-image'
+   'temperature-section weather-description'
+   'weather-icon weather-icon'
+   'feels-like humidity';
+-->
+    <div class="card-image"><img class="card-image" id="card-data-image" src="img/night.jpg"/><div class="city-name"></div></div>
+    <div class="temperature-section" onclick="temperaturechanger()"><span id="temperature-data-section">30</span>&deg<span class="temperature-symbol">c</span></div>
+    <div class="weather-description" onclick="temperaturechanger()"><span id="weather-data-description">light drizzle</span><div class="up">&uarr; <span id="temperature-up-data-section">30</span>&deg<span class="temperature-symbol">c</span></div><div class="down">&darr; <span id="temperature-down-data-section">30</span>&deg<span class="temperature-symbol">c</span></div></div>
+    <div class="weather-icon"><img id="weather-data-image" src="http://openweathermap.org/img/wn/10n.png"></div>
+    <div class="feels-like" onclick="temperaturechanger()"><span>Feels like </span><p><span Data-feels-like>30</span>&deg<span class="temperature-symbol">c</span></p></div>
+    <div class="humidity"><span>Humidity</span><p><span Data-humidity>30</span>%</p></div>
+
+<!--temperaturechanger() is used to change th temperature from celsius to farenheit and vice versa-->
+    </div>
+</div>
+
+</body>
+</html>

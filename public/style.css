@@ -1,0 +1,211 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap'); 
+/* imported raleway from google fonts*/
+
+
+/* :root is available through out css
+--primary are variables with set values(#ddd)  which can be used through out css file
+*/
+:root {
+    --primary: #ddd;
+    --dark: #333;
+    --light: #fff;
+    --shadow: 0 1px 5px rgba(104, 104, 104, 0.8);
+  }
+
+  
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: Raleway;
+}
+
+body{
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-image: linear-gradient(to bottom,rgb(255, 255, 255),rgb(180, 165, 223));
+}
+
+.header p{
+    font-size: 6vh;
+    text-align: center;
+    color: rgb(113, 114, 128);
+}
+
+.search-box {
+    text-align: center;
+    
+}
+
+.search-box input{
+    text-align: center;
+    text-emphasis: size after 10px;
+    border: none;
+    margin-top: 30px;
+    height:35px;
+    width: 90%;
+    max-width: 80vh;
+    border-radius: 10px;
+    outline: none;
+}
+
+.card-display{
+    display:none;
+}
+
+.card{ 
+   position: relative;
+   top: 10px;
+   display: grid;
+   grid-template-areas:   /* used to set every selected elements in decided manner*/
+   'card-image card-image'  /* have to use grid-area so it where to put it*/
+   'temperature-section weather-description'
+   'weather-icon weather-icon'
+   'feels-like humidity';
+   grid-template-rows: 2fr auto auto 1fr;
+   grid-auto-columns: 1fr 1fr;
+   justify-content: center;
+   justify-items: center;
+   align-items: center;
+   background-color: #fff;
+   width:30%;
+   min-width: 53vh;
+   margin: 2vh auto;
+   
+   
+   border-radius: 20px;
+  
+   
+ }
+
+ .card > div{
+  
+     text-align: center;
+
+ }
+
+
+/*@media only screen and (max-width: 100vh){*/
+
+.card-image{
+   
+    grid-area: card-image;  /* have to use grid-area so it where to put it*/
+    width: 100%;
+    height: 100%;
+ 
+  background-size: cover;
+  background-position: center;
+ border-top-left-radius: 20px;
+ border-top-right-radius: 20px;
+ box-shadow:  var(--shadow);
+ 
+
+   
+}
+
+img{
+    width: 100%;
+}
+
+.temperature-section{
+    grid-area: temperature-section;
+    font-size: xxx-large;
+    cursor: pointer;
+   
+}
+
+.weather-description{
+   
+    grid-area: weather-description;
+    padding-top: 20px;
+    font-size:x-large;
+    cursor: pointer;
+}
+
+.weather-icon{
+    grid-area: weather-icon;   
+   display: flex;
+   width: 100px;
+   height: 100px;
+  background-color: rgb(165, 166, 168);
+  border-radius: 100%;
+}
+
+.feels-like{
+    grid-area: feels-like;
+   display: flex;
+   flex-direction: column;
+   padding: 4vh;
+   cursor: pointer;
+}
+.feels-like span,p{
+    font-size: x-large;
+}
+
+
+
+
+.humidity{
+    grid-area: humidity;
+    padding: 5vh;
+    font-size:x-large;
+    border-bottom-right-radius: 20px;
+}
+
+.arrow{
+    font-size: 17px;
+    font-weight: 800;
+}
+
+.error-message-container{
+    display: none;
+    width: 50%;
+    background-color: #fff;
+    margin: auto;
+    box-shadow: 0 1px 5px rgba(2, 2, 2, 0.8);;
+    position: relative;
+    top: 5vh;
+    height: 10vh;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    
+    
+}
+
+.error-message{
+  
+   text-align: center;
+}
+
+.city-name{
+    position: absolute;
+    top: 5px;
+    width: 100%;
+    margin: auto;
+}
+
+.output-place{
+    position: relative;
+    top: 5px;
+    width: 90%;
+    max-width: 80vh;
+    margin: auto;
+    cursor: pointer;
+    height: auto;
+    max-height: 50vh;
+    overflow:auto;
+    display: none;
+    
+   
+}
+.output-place>div{
+    padding: 5px;
+    margin:2px;
+    background-color: rgb(161, 161, 161);
+    
+}
+.output-place>div:hover{
+    background-color: rgb(211, 214, 216);
+}
+
